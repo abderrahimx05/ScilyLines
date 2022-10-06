@@ -18,6 +18,8 @@ namespace ScilyLines
     {
         SecLai sec;
         List<Secteur> lSec = new List<Secteur>();
+        List<Laison> lLai= new List<Laison>();
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace ScilyLines
         {
 
             lSec = sec.chargementSecBD();
+
 
 
             affiche();
@@ -55,6 +58,36 @@ namespace ScilyLines
 
                 MessageBox.Show(ex.Message);
             }
+        }
+        public void affiche2()
+
+        {
+
+
+            try
+            {
+
+
+                laison.DataSource = null;
+                laison.DataSource = lLai;
+                laison.DisplayMember = "afficherLaison";
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void secteur_Click(object sender, EventArgs e)
+        {
+            lLai = sec.chargementLaiBD();
+            affiche2();
         }
     }
 }

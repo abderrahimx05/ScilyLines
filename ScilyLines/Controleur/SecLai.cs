@@ -12,10 +12,13 @@ namespace ScilyLines.Controleur
     {
         SecteurDAO laiDAO = new SecteurDAO();
         List <Secteur> listeSecteur;
+        LaisonDAO laDAO = new LaisonDAO();
+        List<Laison> listeLaison;
 
         public SecLai()
         {
             listeSecteur = new List<Secteur>();
+            listeLaison = new List<Laison>();
 
         }
         // get secteur list
@@ -23,6 +26,11 @@ namespace ScilyLines.Controleur
         {
             listeSecteur = SecteurDAO.getSecteur();
             return listeSecteur;
+        }
+        public List<Laison> chargementLaiBD()
+        {
+            listeLaison = LaisonDAO.getLaison();
+            return listeLaison;
         }
 
     }

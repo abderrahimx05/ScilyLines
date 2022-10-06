@@ -93,6 +93,7 @@
             this.secteur.Name = "secteur";
             this.secteur.Size = new System.Drawing.Size(244, 130);
             this.secteur.TabIndex = 2;
+            this.secteur.Click += new System.EventHandler(this.secteur_Click);
             // 
             // panel2
             // 

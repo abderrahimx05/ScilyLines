@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Connexion.cs" />
-    <Compile Include="DAL\LaissonDAO.cs" />
+    <Compile Include="DAL\LaisonDAO.cs" />
     <Compile Include="Modele\Laison.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

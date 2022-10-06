@@ -50,23 +50,18 @@ namespace ScilyLines
               while (reader.Read())
                 {
 
+                    string  id = (string)reader.GetValue(1);
+                    string nom = (string)reader.GetValue(0);
                     
-                    string nom = (string)reader.GetValue(1);
-                   
 
-                  
-                    e = new Secteur(nom);
+
+                    e = new Secteur(id ,nom);
 
                    
                     lc.Add(e);
 
 
                 }
-
-
-                
-
-
 
                 reader.Close();
 
