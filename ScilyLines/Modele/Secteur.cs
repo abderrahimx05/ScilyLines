@@ -27,9 +27,11 @@ namespace ScilyLines.Modele
  
         public string afficherSecteur
         {
-            get =>  this.name;
+            get =>  this.name;  
         }
     public string Id { get => id; }
     public string Name { get => name; set => name = value; }
+
+       
     }
 }

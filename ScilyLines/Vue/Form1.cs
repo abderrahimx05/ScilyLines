@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScilyLines.Modele;
 using System.Data.SqlClient;
+using System.Collections;
+
 namespace ScilyLines
 
 {
@@ -19,11 +21,12 @@ namespace ScilyLines
         SecLai sec;
         List<Secteur> lSec = new List<Secteur>();
         List<Laison> lLai= new List<Laison>();
-
+        Secteur s;
         public Form1()
         {
             InitializeComponent();
             sec = new SecLai();
+            s = new Secteur();
         }
         
 
@@ -31,7 +34,7 @@ namespace ScilyLines
         {
 
             lSec = sec.chargementSecBD();
-
+            
 
 
             affiche();
@@ -39,19 +42,13 @@ namespace ScilyLines
         public void affiche()
 
         {
-
-
             try
             {
-
-
                 secteur.DataSource = null;
                 secteur.DataSource = lSec;
                 secteur.DisplayMember = "afficherSecteur";
 
-
             }
-
 
             catch (Exception ex)
             {
@@ -60,34 +57,26 @@ namespace ScilyLines
             }
         }
         public void affiche2()
-
         {
-
-
             try
             {
-
-
                 laison.DataSource = null;
                 laison.DataSource = lLai;
                 laison.DisplayMember = "afficherLaison";
-
-
             }
-
-
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-        private void secteur_Click(object sender, EventArgs e)
+        private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
-            lLai = sec.chargementLaiBD();
+            int id =(secteur.SelectedIndex)+1;
+            string name = "messine";
+            //string name = secteur.Items[id-1].ToString();
+            lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
             affiche2();
+            
         }
     }
 }

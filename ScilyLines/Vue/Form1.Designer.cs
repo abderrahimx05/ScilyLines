@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(135, 107);
+            this.label2.Location = new System.Drawing.Point(27, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 23);
             this.label2.TabIndex = 1;
@@ -89,11 +89,11 @@
             // 
             this.secteur.FormattingEnabled = true;
             this.secteur.ItemHeight = 21;
-            this.secteur.Location = new System.Drawing.Point(59, 144);
+            this.secteur.Location = new System.Drawing.Point(12, 144);
             this.secteur.Name = "secteur";
-            this.secteur.Size = new System.Drawing.Size(244, 130);
+            this.secteur.Size = new System.Drawing.Size(122, 130);
             this.secteur.TabIndex = 2;
-            this.secteur.Click += new System.EventHandler(this.secteur_Click);
+            this.secteur.MouseClick += new System.Windows.Forms.MouseEventHandler(this.secteur_MouseClick);
             // 
             // panel2
             // 
@@ -147,20 +147,20 @@
             // 
             this.laison.FormattingEnabled = true;
             this.laison.ItemHeight = 21;
-            this.laison.Location = new System.Drawing.Point(331, 144);
+            this.laison.Location = new System.Drawing.Point(248, 144);
             this.laison.Name = "laison";
-            this.laison.Size = new System.Drawing.Size(366, 130);
+            this.laison.Size = new System.Drawing.Size(449, 130);
             this.laison.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(478, 107);
+            this.label3.Location = new System.Drawing.Point(441, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 23);
+            this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Laisons";
+            this.label3.Text = "Liaisons";
             // 
             // Form1
             // 
