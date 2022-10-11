@@ -72,8 +72,11 @@ namespace ScilyLines
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
             int id =(secteur.SelectedIndex)+1;
-            string name = "messine";
-            //string name = secteur.Items[id-1].ToString();
+            //string name = "messine";
+            
+            string name = secteur.GetItemText(secteur.SelectedItem);
+
+
             lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
             affiche2();
             
