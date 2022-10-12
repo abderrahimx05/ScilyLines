@@ -38,7 +38,7 @@
             this.update = new System.Windows.Forms.Button();
             this.duree = new System.Windows.Forms.TextBox();
             this.modifier = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             this.inserer = new System.Windows.Forms.Button();
             this.laison = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             this.panel2.Controls.Add(this.update);
             this.panel2.Controls.Add(this.duree);
             this.panel2.Controls.Add(this.modifier);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.delete);
             this.panel2.Controls.Add(this.inserer);
             this.panel2.Location = new System.Drawing.Point(0, 394);
             this.panel2.Name = "panel2";
@@ -142,21 +142,24 @@
             this.modifier.TabIndex = 2;
             this.modifier.Text = "Modifier";
             this.modifier.UseVisualStyleBackColor = false;
+            this.modifier.Visible = false;
             this.modifier.Click += new System.EventHandler(this.modifier_Click);
             // 
-            // button2
+            // delete
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(140, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Suprimer";
-            this.button2.UseVisualStyleBackColor = false;
+            this.delete.BackColor = System.Drawing.Color.Black;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.delete.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.delete.Location = new System.Drawing.Point(140, 18);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(104, 32);
+            this.delete.TabIndex = 1;
+            this.delete.Text = "Suprimer";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Visible = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click_1);
             // 
             // inserer
             // 
@@ -228,7 +231,7 @@
         private System.Windows.Forms.ListBox secteur;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button modifier;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button inserer;
         private System.Windows.Forms.ListBox laison;
         private System.Windows.Forms.Label label3;
