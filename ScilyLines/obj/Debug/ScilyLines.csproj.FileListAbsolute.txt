@@ -1,0 +1,39 @@
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\ScilyLines.exe.config
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\ScilyLines.exe
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\ScilyLines.pdb
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\Google.Protobuf.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\MySql.Data.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Buffers.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Memory.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\ZstdNet.dll
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\Google.Protobuf.pdb
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\Google.Protobuf.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\MySql.Data.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Buffers.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Memory.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.Properties.Resources.resources
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.Form1.resources
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.CopyComplete
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.exe
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.pdb
+C:\Users\totop\OneDrive\Bureau\bts projet\ScilyLines-main\ScilyLines\obj\Debug\ScilyLines.csproj.AssemblyReference.cache
+C:\Users\totop\OneDrive\Bureau\bts projet\ScilyLines-main\ScilyLines\obj\Debug\ScilyLines.csproj.SuggestedBindingRedirects.cache
+C:\Users\totop\OneDrive\Bureau\bts projet\ScilyLines-main\ScilyLines\obj\Debug\ScilyLines.exe
+C:\Users\totop\OneDrive\Bureau\bts projet\ScilyLines-main\ScilyLines\obj\Debug\ScilyLines.pdb
