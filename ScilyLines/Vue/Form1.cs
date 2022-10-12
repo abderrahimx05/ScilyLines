@@ -44,6 +44,7 @@ namespace ScilyLines
         {
             try
             {
+                
                 secteur.DataSource = null;
                 secteur.DataSource = lSec;
                 secteur.DisplayMember = "afficherSecteur";
@@ -72,7 +73,7 @@ namespace ScilyLines
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
             int id =(secteur.SelectedIndex)+1;
-            //string name = "messine";
+            
             
             string name = secteur.GetItemText(secteur.SelectedItem);
 
@@ -80,6 +81,50 @@ namespace ScilyLines
             lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
             affiche2();
             
+        }
+
+        private void modifier_Click(object sender, EventArgs e)
+        {
+            duree.Visible = true;
+            update.Visible = true;
+            
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                Laison le = (Laison)laison.SelectedItem;
+
+                le.Duree = duree.Text;
+                int id = (secteur.SelectedIndex) + 1;
+
+
+                string name = secteur.GetItemText(secteur.SelectedItem);
+
+                sec.updateDuree(le , Convert.ToString(id), name );
+
+
+                
+
+
+                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+               
+
+                affiche2();
+                MessageBox.Show("la duree est bien modifier vers : "+duree.Text+" min .");
+                update.Visible = false;
+                duree.Visible = false;
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }
