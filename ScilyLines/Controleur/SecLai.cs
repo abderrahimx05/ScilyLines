@@ -33,10 +33,10 @@ namespace ScilyLines.Controleur
              listeLaison = LaisonDAO.getLaison(id, name);
             return listeLaison;
         }
-        public void updateDuree(Laison le)
+        public void updateDuree(Laison le , string id , string name)
         {
 
-            LaisonDAO.updateDuree(le);
+            LaisonDAO.updateDuree(le , id , name );
 
         }
 

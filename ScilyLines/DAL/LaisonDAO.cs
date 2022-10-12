@@ -44,7 +44,7 @@ namespace ScilyLines.DAL
                 maConnexionSql.openConnection();
                 // il faut donc que je cherche comment integre la labbele de secteur et id ;
                
-                    com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='"+name+"' and L.ID_REGROUPER="+id);
+                    com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree , ID_ARRIVEE from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='"+name+"' and L.ID_REGROUPER="+id);
                     
                 
 
@@ -57,10 +57,12 @@ namespace ScilyLines.DAL
                     string arrivee = (string)reader.GetValue(1);
                     string depart = (string)reader.GetValue(0);
                     string duree = (string)reader.GetValue(2);
+                    string arrive = (string)reader.GetValue(3);
+                    
 
 
 
-                    e = new Laison( depart,arrivee , duree);
+                    e = new Laison( depart,arrivee , duree , arrive);
                     
 
                     lc.Add(e);
@@ -91,7 +93,7 @@ namespace ScilyLines.DAL
             }
 
         }
-        public static void updateDuree(Laison le)
+        public static void updateDuree(Laison le , string id , string name )
         {
 
             try
@@ -104,7 +106,7 @@ namespace ScilyLines.DAL
                 maConnexionSql.openConnection();
 
 
-                com = maConnexionSql.reqExec("update employe set login= '" + le.Duree);
+                com = maConnexionSql.reqExec(" update liaison   set duree=" + le.Duree+ " where ID_REGROUPER="+id+" and  ID_ARRIVEE=" +le.ArriveeId);
 
 
                 int i = com.ExecuteNonQuery();

@@ -86,27 +86,37 @@ namespace ScilyLines
         private void modifier_Click(object sender, EventArgs e)
         {
             duree.Visible = true;
+            update.Visible = true;
+            
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
             try
             {
-                // Récuperer l'indice de l'employé selectionné dans la listBox
-                /* int i = listBoxEmploye.SelectedIndex;
-                 * 
-                 * Récupérer l'employé selectionné à partir de la collection lEmp
-                 * Employe emp = lEmp[i];
-                 */
 
-                // Récupérer directement l'employé selectionné
 
                 Laison le = (Laison)laison.SelectedItem;
 
                 le.Duree = duree.Text;
+                int id = (secteur.SelectedIndex) + 1;
 
-                sec.updateDuree(le);
+
+                string name = secteur.GetItemText(secteur.SelectedItem);
+
+                sec.updateDuree(le , Convert.ToString(id), name );
+
 
                 
 
 
-                affiche2(); 
+                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+               
+
+                affiche2();
+                MessageBox.Show("la duree est bien modifier vers : "+duree.Text+" min .");
+                update.Visible = false;
+                duree.Visible = false;
 
             }
 
