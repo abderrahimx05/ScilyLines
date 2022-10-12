@@ -40,6 +40,7 @@
             this.inserer = new System.Windows.Forms.Button();
             this.laison = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.duree = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -98,6 +99,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.IndianRed;
+            this.panel2.Controls.Add(this.duree);
             this.panel2.Controls.Add(this.modifier);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.inserer);
@@ -117,13 +119,15 @@
             this.modifier.TabIndex = 2;
             this.modifier.Text = "Modifier";
             this.modifier.UseVisualStyleBackColor = false;
+            this.modifier.Click += new System.EventHandler(this.modifier_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(139, 18);
+            this.button2.Location = new System.Drawing.Point(140, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 32);
             this.button2.TabIndex = 1;
@@ -162,6 +166,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Liaisons";
             // 
+            // duree
+            // 
+            this.duree.Location = new System.Drawing.Point(396, 18);
+            this.duree.Name = "duree";
+            this.duree.Size = new System.Drawing.Size(125, 28);
+            this.duree.TabIndex = 3;
+            this.duree.Text = "ajouter duree";
+            this.duree.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -185,6 +198,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +217,7 @@
         private System.Windows.Forms.Button inserer;
         private System.Windows.Forms.ListBox laison;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox duree;
     }
 }
 

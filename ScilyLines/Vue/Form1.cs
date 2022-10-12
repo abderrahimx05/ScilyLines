@@ -44,6 +44,7 @@ namespace ScilyLines
         {
             try
             {
+                
                 secteur.DataSource = null;
                 secteur.DataSource = lSec;
                 secteur.DisplayMember = "afficherSecteur";
@@ -72,7 +73,7 @@ namespace ScilyLines
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
             int id =(secteur.SelectedIndex)+1;
-            //string name = "messine";
+            
             
             string name = secteur.GetItemText(secteur.SelectedItem);
 
@@ -80,6 +81,40 @@ namespace ScilyLines
             lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
             affiche2();
             
+        }
+
+        private void modifier_Click(object sender, EventArgs e)
+        {
+            duree.Visible = true;
+            try
+            {
+                // Récuperer l'indice de l'employé selectionné dans la listBox
+                /* int i = listBoxEmploye.SelectedIndex;
+                 * 
+                 * Récupérer l'employé selectionné à partir de la collection lEmp
+                 * Employe emp = lEmp[i];
+                 */
+
+                // Récupérer directement l'employé selectionné
+
+                Laison le = (Laison)laison.SelectedItem;
+
+                le.Duree = duree.Text;
+
+                sec.updateDuree(le);
+
+                
+
+
+                affiche2(); 
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

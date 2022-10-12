@@ -91,7 +91,40 @@ namespace ScilyLines.DAL
             }
 
         }
+        public static void updateDuree(Laison le)
+        {
 
+            try
+            {
+
+
+                maConnexionSql = Connexion.getInstance(provider, dataBase, uid, mdp);
+
+
+                maConnexionSql.openConnection();
+
+
+                com = maConnexionSql.reqExec("update employe set login= '" + le.Duree);
+
+
+                int i = com.ExecuteNonQuery();
+
+
+
+                maConnexionSql.closeConnection();
+
+
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+
+
+        }
 
     }
 }
