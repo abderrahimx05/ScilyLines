@@ -127,6 +127,40 @@ namespace ScilyLines.DAL
 
 
         }
+        public static void deleteLiaison(Laison le, string id, string name)
+        {
+
+            try
+            {
+
+
+                maConnexionSql = Connexion.getInstance(provider, dataBase, uid, mdp);
+
+
+                maConnexionSql.openConnection();
+
+
+                com = maConnexionSql.reqExec(" delete from liaison  where ID_REGROUPER="+id+" and  ID_ARRIVEE=" +le.ArriveeId);
+
+
+                int i = com.ExecuteNonQuery();
+
+
+
+                maConnexionSql.closeConnection();
+
+
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+
+
+        }
 
     }
 }

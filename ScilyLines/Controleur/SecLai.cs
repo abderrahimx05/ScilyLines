@@ -39,6 +39,13 @@ namespace ScilyLines.Controleur
             LaisonDAO.updateDuree(le , id , name );
 
         }
+        public void deleteLiaison(Laison le, string id, string name)
+        {
+
+            LaisonDAO.deleteLiaison(le, id, name);
+
+        }
+
 
     }
 }

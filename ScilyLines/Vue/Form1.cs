@@ -81,6 +81,9 @@ namespace ScilyLines
             lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
             affiche2();
             
+            delete.Visible = true;
+            modifier.Visible = true;
+            
         }
 
         private void modifier_Click(object sender, EventArgs e)
@@ -92,29 +95,71 @@ namespace ScilyLines
 
         private void update_Click(object sender, EventArgs e)
         {
+            update.BackColor = Color.Red;
+            
             try
             {
-
-
-                Laison le = (Laison)laison.SelectedItem;
-
-                le.Duree = duree.Text;
-                int id = (secteur.SelectedIndex) + 1;
-
-
-                string name = secteur.GetItemText(secteur.SelectedItem);
-
-                sec.updateDuree(le , Convert.ToString(id), name );
-
-
                 
 
 
-                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                if (duree.Text.Length == 0)
+                {
+                    // si l'utilisateur il a rien entre dans textBon
+                    string message = "Vous n'avez pas entrer aucun valeur pour l'operation?";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+
+                        this.Refresh();
+                        
+                        
+
+                    }
+                }
+                else
+                {
+ DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Modifier la durée", MessageBoxButtons.YesNo);
+                     if (dialogResult == DialogResult.Yes)
+                {
+                    Laison le = (Laison)laison.SelectedItem;
+                    le.Duree = duree.Text;
+                    int id = (secteur.SelectedIndex) + 1;
+
+
+                    string name = secteur.GetItemText(secteur.SelectedItem);
+
+                    
+                      sec.updateDuree(le, Convert.ToString(id), name);
+                      lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+
+
+                    affiche2();
+                    MessageBox.Show("la duree est bien modifier vers : " + duree.Text + " min .");
+
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    int id = (secteur.SelectedIndex) + 1;
+
+
+                    string name = secteur.GetItemText(secteur.SelectedItem);
+
+                    lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                } 
+                }
+                
+                
                
 
-                affiche2();
-                MessageBox.Show("la duree est bien modifier vers : "+duree.Text+" min .");
+               
+               
+
+                
                 update.Visible = false;
                 duree.Visible = false;
 
@@ -124,6 +169,44 @@ namespace ScilyLines
             {
                 MessageBox.Show(ex.Message);
 
+            }
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            
+            
+
+
+
+
+
+            
+        }
+
+        private void delete_Click_1(object sender, EventArgs e)
+        {
+            Laison le = (Laison)laison.SelectedItem;
+
+            le.Duree = duree.Text;
+            int id = (secteur.SelectedIndex) + 1;
+
+
+            string name = secteur.GetItemText(secteur.SelectedItem);
+
+
+            DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Supprimer la liaison", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                sec.deleteLiaison(le, Convert.ToString(id), name);
+                this.Refresh();
+                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                laison.Update();
+                
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
             }
         }
     }
