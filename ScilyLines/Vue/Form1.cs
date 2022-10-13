@@ -1,5 +1,6 @@
 ﻿using ScilyLines.Controleur;
 using ScilyLines.DAL;
+using ScilyLines.Vue;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -209,6 +210,12 @@ namespace ScilyLines
             {
                 lLai = sec.chargementLaiBD(Convert.ToString(id), name);
             }
+        }
+
+        private void inserer_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.ShowDialog();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.Cms;
+using Org.BouncyCastle.Utilities.Collections;
 using ScilyLines.Modele;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ScilyLines.DAL
 {
@@ -141,6 +143,41 @@ namespace ScilyLines.DAL
 
 
                 com = maConnexionSql.reqExec(" delete from liaison  where ID_REGROUPER="+id+" and  ID_ARRIVEE=" +le.ArriveeId);
+
+
+                int i = com.ExecuteNonQuery();
+
+
+
+                maConnexionSql.closeConnection();
+
+
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+
+
+        }
+        public static void addLiaison(string duree, string id_depart, string id_arrivee , string id_secteur)
+        {
+
+            try
+            {
+
+
+                maConnexionSql = Connexion.getInstance(provider, dataBase, uid, mdp);
+
+                maConnexionSql.openConnection();
+                string req = "INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree , ID_REGROUPER) VALUES(" + id_depart + ", " + id_arrivee + ", " + duree + ", " + id_secteur + ")";
+
+                MessageBox.Show(req);
+                
+                com = maConnexionSql.reqExec("INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree ,ID_REGROUPER) VALUES("+id_depart+","+ id_arrivee +","+duree+","+id_secteur+")");
 
 
                 int i = com.ExecuteNonQuery();

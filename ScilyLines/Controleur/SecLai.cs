@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ScilyLines.Modele;
+using System.Xml.Linq;
 
 namespace ScilyLines.Controleur
 {
@@ -45,6 +46,7 @@ namespace ScilyLines.Controleur
             LaisonDAO.deleteLiaison(le, id, name);
 
         }
+        
 
 
     }
