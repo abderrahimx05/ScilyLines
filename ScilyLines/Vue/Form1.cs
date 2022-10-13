@@ -21,7 +21,7 @@ namespace ScilyLines
     {
         SecLai sec;
         List<Secteur> lSec = new List<Secteur>();
-        List<Laison> lLai= new List<Laison>();
+        List<Laison> lLai = new List<Laison>();
         Secteur s;
         public Form1()
         {
@@ -29,13 +29,13 @@ namespace ScilyLines
             sec = new SecLai();
             s = new Secteur();
         }
-        
+
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
 
             lSec = sec.chargementSecBD();
-            
+
 
 
             affiche();
@@ -45,7 +45,7 @@ namespace ScilyLines
         {
             try
             {
-                
+
                 secteur.DataSource = null;
                 secteur.DataSource = lSec;
                 secteur.DisplayMember = "afficherSecteur";
@@ -73,34 +73,34 @@ namespace ScilyLines
         }
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
-            int id =(secteur.SelectedIndex)+1;
-            
-            
+            int id = (secteur.SelectedIndex) + 1;
+
+
             string name = secteur.GetItemText(secteur.SelectedItem);
 
 
-            lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
+            lLai = sec.chargementLaiBD(Convert.ToString(id), name);
             affiche2();
-            
+
             delete.Visible = true;
             modifier.Visible = true;
-            
+
         }
 
         private void modifier_Click(object sender, EventArgs e)
         {
             duree.Visible = true;
             update.Visible = true;
-            
+
         }
 
         private void update_Click(object sender, EventArgs e)
         {
             update.BackColor = Color.Red;
-            
+
             try
             {
-                
+
 
 
                 if (duree.Text.Length == 0)
@@ -117,50 +117,50 @@ namespace ScilyLines
                     {
 
                         this.Refresh();
-                        
-                        
+
+
 
                     }
                 }
                 else
                 {
- DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Modifier la durée", MessageBoxButtons.YesNo);
-                     if (dialogResult == DialogResult.Yes)
-                {
-                    Laison le = (Laison)laison.SelectedItem;
-                    le.Duree = duree.Text;
-                    int id = (secteur.SelectedIndex) + 1;
+                    DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Modifier la durée", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Laison le = (Laison)laison.SelectedItem;
+                        le.Duree = duree.Text;
+                        int id = (secteur.SelectedIndex) + 1;
 
 
-                    string name = secteur.GetItemText(secteur.SelectedItem);
-
-                    
-                      sec.updateDuree(le, Convert.ToString(id), name);
-                      lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                        string name = secteur.GetItemText(secteur.SelectedItem);
 
 
-                    affiche2();
-                    MessageBox.Show("la duree est bien modifier vers : " + duree.Text + " min .");
+                        sec.updateDuree(le, Convert.ToString(id), name);
+                        lLai = sec.chargementLaiBD(Convert.ToString(id), name);
 
+
+                        affiche2();
+                        MessageBox.Show("la duree est bien modifier vers : " + duree.Text + " min .");
+
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        int id = (secteur.SelectedIndex) + 1;
+
+
+                        string name = secteur.GetItemText(secteur.SelectedItem);
+
+                        lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
-                {
-                    int id = (secteur.SelectedIndex) + 1;
 
 
-                    string name = secteur.GetItemText(secteur.SelectedItem);
 
-                    lLai = sec.chargementLaiBD(Convert.ToString(id), name);
-                } 
-                }
-                
-                
-               
 
-               
-               
 
-                
+
+
+
                 update.Visible = false;
                 duree.Visible = false;
 
@@ -175,14 +175,14 @@ namespace ScilyLines
 
         private void delete_Click(object sender, EventArgs e)
         {
-            
-            
 
 
 
 
 
-            
+
+
+
         }
 
         private void delete_Click_1(object sender, EventArgs e)
@@ -203,8 +203,8 @@ namespace ScilyLines
                 this.Refresh();
                 lLai = sec.chargementLaiBD(Convert.ToString(id), name);
                 affiche2();
-                
-                
+
+
             }
             else if (dialogResult == DialogResult.No)
             {
