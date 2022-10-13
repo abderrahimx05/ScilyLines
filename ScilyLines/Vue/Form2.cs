@@ -37,16 +37,55 @@ namespace ScilyLines.Vue
 
         private void ajouter_Click(object sender, EventArgs e)
         {
-            string id_depart = id_sec.Text;
-            string id_arrivee = arv.Text;
-            string dure = duree.Text;
-            string id_regroupe = id_sec.Text;
-            LaisonDAO.addLiaison(dure,id_depart, id_arrivee,  id_regroupe);
+            string id_depart = com.Text;
 
-            Form2 f = new Form2();
-            f.Close();
+
+            string id_arrivee = port.Text;
+
+
+
+            string dure = duree.Text;
+
+
+            string id_regroupe = secteur.Text;
+            string id = idd.Text;
+            if (idd.Text.Length == 0 || com.Text.Length == 0 || port.Text.Length == 0|| duree.Text.Length == 0 || secteur.Text.Length == 0)
+            {
+                string message = "Vous n'avez pas entrer aucun valeur pour l'operation?";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+
+                    this.Show();
+
+
+
+
+                }
+                else
+                {
+                    LaisonDAO.addLiaison(id, dure, id_depart, id_arrivee, id_regroupe);
+                    this.Close();
+                }
+            }
             
+            
+            
+           
+
+           
+
         }
-    } 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 
 }

@@ -26,18 +26,18 @@ namespace ScilyLines.DAL
 
         private static Connexion maConnexionSql;
 
-        private  Secteur s;
-        
+        private Secteur s;
+
         private static MySqlCommand com;
 
 
-        public static List<Laison> getLaison(string id , string name)
+        public static List<Laison> getLaison(string id, string name)
         {
-             
-            List<Laison> lc = new List<Laison>();
-              
 
-           
+            List<Laison> lc = new List<Laison>();
+
+
+
             try
             {
 
@@ -45,10 +45,10 @@ namespace ScilyLines.DAL
 
                 maConnexionSql.openConnection();
                 // il faut donc que je cherche comment integre la labbele de secteur et id ;
-               
-                    com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree , ID_ARRIVEE from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='"+name+"' and L.ID_REGROUPER="+id);
-                    
-                
+
+                com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree , ID_ARRIVEE from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='" + name + "' and L.ID_REGROUPER=" + id);
+
+
 
                 MySqlDataReader reader = com.ExecuteReader();
 
@@ -60,12 +60,12 @@ namespace ScilyLines.DAL
                     string depart = (string)reader.GetValue(0);
                     string duree = (string)reader.GetValue(2);
                     string arrive = (string)reader.GetValue(3);
-                    
 
 
 
-                    e = new Laison( depart,arrivee , duree , arrive);
-                    
+
+                    e = new Laison(depart, arrivee, duree, arrive);
+
 
                     lc.Add(e);
 
@@ -95,7 +95,7 @@ namespace ScilyLines.DAL
             }
 
         }
-        public static void updateDuree(Laison le , string id , string name )
+        public static void updateDuree(Laison le, string id, string name)
         {
 
             try
@@ -108,7 +108,7 @@ namespace ScilyLines.DAL
                 maConnexionSql.openConnection();
 
 
-                com = maConnexionSql.reqExec(" update liaison   set duree=" + le.Duree+ " where ID_REGROUPER="+id+" and  ID_ARRIVEE=" +le.ArriveeId);
+                com = maConnexionSql.reqExec(" update liaison   set duree=" + le.Duree + " where ID_REGROUPER=" + id + " and  ID_ARRIVEE=" + le.ArriveeId);
 
 
                 int i = com.ExecuteNonQuery();
@@ -142,7 +142,7 @@ namespace ScilyLines.DAL
                 maConnexionSql.openConnection();
 
 
-                com = maConnexionSql.reqExec(" delete from liaison  where ID_REGROUPER="+id+" and  ID_ARRIVEE=" +le.ArriveeId);
+                com = maConnexionSql.reqExec(" delete from liaison  where ID_REGROUPER=" + id + " and  ID_ARRIVEE=" + le.ArriveeId);
 
 
                 int i = com.ExecuteNonQuery();
@@ -163,7 +163,7 @@ namespace ScilyLines.DAL
 
 
         }
-        public static void addLiaison(string duree, string id_depart, string id_arrivee , string id_secteur)
+        public static void addLiaison(string id ,string duree, string id_depart, string id_arrivee, string id_secteur)
         {
 
             try
@@ -173,11 +173,11 @@ namespace ScilyLines.DAL
                 maConnexionSql = Connexion.getInstance(provider, dataBase, uid, mdp);
 
                 maConnexionSql.openConnection();
-                string req = "INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree , ID_REGROUPER) VALUES(" + id_depart + ", " + id_arrivee + ", " + duree + ", " + id_secteur + ")";
+                //string req = "INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree , ID_REGROUPER) VALUES(" + id_depart + ", " + id_arrivee + ", " + duree + ", " + id_secteur + ")";
 
-                MessageBox.Show(req);
-                
-                com = maConnexionSql.reqExec("INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree ,ID_REGROUPER) VALUES("+id_depart+","+ id_arrivee +","+duree+","+id_secteur+")");
+                //MessageBox.Show(req);
+
+                com = maConnexionSql.reqExec("INSERT INTO liaison(ID ,ID_DEPART, ID_ARRIVEE , duree ,ID_REGROUPER) VALUES("+id+"," + id_depart + "," + id_arrivee + "," + duree + "," + id_secteur + ")");
 
 
                 int i = com.ExecuteNonQuery();

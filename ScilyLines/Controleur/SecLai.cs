@@ -12,7 +12,7 @@ namespace ScilyLines.Controleur
     public class SecLai
     {
         SecteurDAO laiDAO = new SecteurDAO();
-        List <Secteur> listeSecteur;
+        List<Secteur> listeSecteur;
         LaisonDAO laDAO = new LaisonDAO();
         List<Laison> listeLaison;
         Secteur s;
@@ -29,15 +29,15 @@ namespace ScilyLines.Controleur
             listeSecteur = SecteurDAO.getSecteur();
             return listeSecteur;
         }
-        public List<Laison> chargementLaiBD(string id , string name)
+        public List<Laison> chargementLaiBD(string id, string name)
         {
-             listeLaison = LaisonDAO.getLaison(id, name);
+            listeLaison = LaisonDAO.getLaison(id, name);
             return listeLaison;
         }
-        public void updateDuree(Laison le , string id , string name)
+        public void updateDuree(Laison le, string id, string name)
         {
 
-            LaisonDAO.updateDuree(le , id , name );
+            LaisonDAO.updateDuree(le, id, name);
 
         }
         public void deleteLiaison(Laison le, string id, string name)
@@ -46,7 +46,7 @@ namespace ScilyLines.Controleur
             LaisonDAO.deleteLiaison(le, id, name);
 
         }
-        
+
 
 
     }

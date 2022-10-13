@@ -47,17 +47,17 @@ namespace ScilyLines
 
                 Secteur e;
 
-              while (reader.Read())
+                while (reader.Read())
                 {
 
-                    string  id = (string)reader.GetValue(1);
+                    string id = (string)reader.GetValue(1);
                     string nom = (string)reader.GetValue(0);
-                    
 
 
-                    e = new Secteur(id ,nom);
 
-                   
+                    e = new Secteur(id, nom);
+
+
                     lc.Add(e);
 
 
@@ -67,9 +67,9 @@ namespace ScilyLines
 
                 maConnexionSql.closeConnection();
 
-             
+
                 return (lc);
-                
+
 
 
             }
@@ -82,6 +82,6 @@ namespace ScilyLines
             }
 
         }
-       
+
     }
 }
