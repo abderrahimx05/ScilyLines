@@ -201,7 +201,8 @@ namespace ScilyLines
                 sec.deleteLiaison(le, Convert.ToString(id), name);
                 this.Refresh();
                 lLai = sec.chargementLaiBD(Convert.ToString(id), name);
-                laison.Update();
+                affiche2();
+                
                 
             }
             else if (dialogResult == DialogResult.No)
