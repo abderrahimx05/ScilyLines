@@ -33,3 +33,4 @@ C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.cspro
 C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.csproj.CopyComplete
 C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.exe
 C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.pdb
+C:\Users\HP\Desktop\SIO2\C#\TP2\ScilyLines\ScilyLines\obj\Debug\ScilyLines.Vue.Form2.resources

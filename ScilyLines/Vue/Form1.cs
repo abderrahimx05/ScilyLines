@@ -1,5 +1,6 @@
 ﻿using ScilyLines.Controleur;
 using ScilyLines.DAL;
+using ScilyLines.Vue;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -201,13 +202,20 @@ namespace ScilyLines
                 sec.deleteLiaison(le, Convert.ToString(id), name);
                 this.Refresh();
                 lLai = sec.chargementLaiBD(Convert.ToString(id), name);
-                laison.Update();
+                affiche2();
+                
                 
             }
             else if (dialogResult == DialogResult.No)
             {
                 lLai = sec.chargementLaiBD(Convert.ToString(id), name);
             }
+        }
+
+        private void inserer_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.ShowDialog();
         }
     }
 }

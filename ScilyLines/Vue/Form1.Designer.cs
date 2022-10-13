@@ -173,6 +173,7 @@
             this.inserer.TabIndex = 0;
             this.inserer.Text = "Insérer";
             this.inserer.UseVisualStyleBackColor = false;
+            this.inserer.Click += new System.EventHandler(this.inserer_Click);
             // 
             // laison
             // 
