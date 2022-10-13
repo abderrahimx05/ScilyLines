@@ -18,24 +18,24 @@ namespace ScilyLines.DAL
 
         private static string uid = "scilyline";
 
-        private static string mdp = "AbderBen22";
+        private static string mdp = "abdben";
 
 
 
         private static Connexion maConnexionSql;
 
-        private  Secteur s;
-        
+        private Secteur s;
+
         private static MySqlCommand com;
 
 
-        public static List<Laison> getLaison(string id , string name)
+        public static List<Laison> getLaison(string id, string name)
         {
-             
-            List<Laison> lc = new List<Laison>();
-              
 
-           
+            List<Laison> lc = new List<Laison>();
+
+
+
             try
             {
 
@@ -43,10 +43,10 @@ namespace ScilyLines.DAL
 
                 maConnexionSql.openConnection();
                 // il faut donc que je cherche comment integre la labbele de secteur et id ;
-               
-                    com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='"+name+"' and L.ID_REGROUPER="+id);
-                    
-                
+
+                com = maConnexionSql.reqExec("Select  LIBELLE , NOM , duree from  secteur S  ,port P  , liaison L where   P.ID=L.ID_ARRIVEE and S.LIBELLE='" + name + "' and L.ID_REGROUPER=" + id);
+
+
 
                 MySqlDataReader reader = com.ExecuteReader();
 
@@ -60,8 +60,8 @@ namespace ScilyLines.DAL
 
 
 
-                    e = new Laison( depart,arrivee , duree);
-                    
+                    e = new Laison(depart, arrivee, duree);
+
 
                     lc.Add(e);
 
