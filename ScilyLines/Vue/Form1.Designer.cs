@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.secteur = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.update = new System.Windows.Forms.Button();
+            this.duree = new System.Windows.Forms.TextBox();
             this.modifier = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             this.inserer = new System.Windows.Forms.Button();
             this.laison = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,8 +60,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Image = global::ScilyLines.Properties.Resources.ship;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,9 +74,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(601, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 27);
+            this.label1.Size = new System.Drawing.Size(113, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ScilyLines";
+            this.label1.Text = "SicilyLines";
             // 
             // label2
             // 
@@ -98,17 +101,40 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.IndianRed;
+            this.panel2.Controls.Add(this.update);
+            this.panel2.Controls.Add(this.duree);
             this.panel2.Controls.Add(this.modifier);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.delete);
             this.panel2.Controls.Add(this.inserer);
             this.panel2.Location = new System.Drawing.Point(0, 394);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(721, 63);
             this.panel2.TabIndex = 3;
             // 
+            // update
+            // 
+            this.update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update.Location = new System.Drawing.Point(527, 18);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 28);
+            this.update.TabIndex = 4;
+            this.update.Text = "Update";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Visible = false;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // duree
+            // 
+            this.duree.Location = new System.Drawing.Point(387, 18);
+            this.duree.Name = "duree";
+            this.duree.Size = new System.Drawing.Size(125, 28);
+            this.duree.TabIndex = 3;
+            this.duree.Visible = false;
+            // 
             // modifier
             // 
             this.modifier.BackColor = System.Drawing.Color.Black;
+            this.modifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.modifier.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifier.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.modifier.Location = new System.Drawing.Point(266, 18);
@@ -117,18 +143,24 @@
             this.modifier.TabIndex = 2;
             this.modifier.Text = "Modifier";
             this.modifier.UseVisualStyleBackColor = false;
+            this.modifier.Visible = false;
+            this.modifier.Click += new System.EventHandler(this.modifier_Click);
             // 
-            // button2
+            // delete
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(139, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Suprimer";
-            this.button2.UseVisualStyleBackColor = false;
+            this.delete.BackColor = System.Drawing.Color.Black;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.delete.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.delete.Location = new System.Drawing.Point(129, 18);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(120, 32);
+            this.delete.TabIndex = 1;
+            this.delete.Text = "Supprimer";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Visible = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click_1);
             // 
             // inserer
             // 
@@ -142,6 +174,7 @@
             this.inserer.TabIndex = 0;
             this.inserer.Text = "Insérer";
             this.inserer.UseVisualStyleBackColor = false;
+            this.inserer.Click += new System.EventHandler(this.inserer_Click);
             // 
             // laison
             // 
@@ -161,6 +194,12 @@
             this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Liaisons";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 
@@ -185,6 +224,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,15 +234,18 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox secteur;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button modifier;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button inserer;
         private System.Windows.Forms.ListBox laison;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox duree;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

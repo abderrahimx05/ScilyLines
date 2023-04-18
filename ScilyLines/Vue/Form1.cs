@@ -1,5 +1,6 @@
 ﻿using ScilyLines.Controleur;
 using ScilyLines.DAL;
+using ScilyLines.Vue;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace ScilyLines
     {
         SecLai sec;
         List<Secteur> lSec = new List<Secteur>();
-        List<Laison> lLai= new List<Laison>();
+        List<Laison> lLai = new List<Laison>();
         Secteur s;
         public Form1()
         {
@@ -28,13 +29,13 @@ namespace ScilyLines
             sec = new SecLai();
             s = new Secteur();
         }
-        
+
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
 
             lSec = sec.chargementSecBD();
-            
+
 
 
             affiche();
@@ -44,6 +45,7 @@ namespace ScilyLines
         {
             try
             {
+
                 secteur.DataSource = null;
                 secteur.DataSource = lSec;
                 secteur.DisplayMember = "afficherSecteur";
@@ -71,12 +73,149 @@ namespace ScilyLines
         }
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
-            int id =(secteur.SelectedIndex)+1;
-            string name = "messine";
-            //string name = secteur.Items[id-1].ToString();
-            lLai = sec.chargementLaiBD(Convert.ToString(id) , name);
+            int id = (secteur.SelectedIndex) + 1;
+
+
+            string name = secteur.GetItemText(secteur.SelectedItem);
+
+
+            lLai = sec.chargementLaiBD(id, name);
             affiche2();
-            
+
+            delete.Visible = true;
+            modifier.Visible = true;
+
+        }
+
+        private void modifier_Click(object sender, EventArgs e)
+        {
+            duree.Visible = true;
+            update.Visible = true;
+
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            update.BackColor = Color.Red;
+
+            try
+            {
+
+
+
+                if (duree.Text.Length == 0)
+                {
+                    // si l'utilisateur il a rien entre dans textBon
+                    string message = "Vous n'avez pas entrer aucun valeur pour l'operation?";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+
+                        this.Refresh();
+
+
+
+                    }
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Modifier la durée", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Laison le = (Laison)laison.SelectedItem;
+                        le.Duree = duree.Text;
+                        int id = (secteur.SelectedIndex) + 1;
+
+
+                        string name = secteur.GetItemText(secteur.SelectedItem);
+
+
+                        sec.updateDuree(le,id, name);
+                        lLai = sec.chargementLaiBD(id, name);
+
+
+                        affiche2();
+                        MessageBox.Show("la duree est bien modifier vers : " + duree.Text + " min .");
+
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        int id = (secteur.SelectedIndex) + 1;
+
+
+                        string name = secteur.GetItemText(secteur.SelectedItem);
+
+                        lLai = sec.chargementLaiBD(id, name);
+                    }
+                }
+
+
+
+
+
+
+
+
+                update.Visible = false;
+                duree.Visible = false;
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
+        }
+
+        private void delete_Click_1(object sender, EventArgs e)
+        {
+            Laison le = (Laison)laison.SelectedItem;
+
+            le.Duree = duree.Text;
+            int id = (secteur.SelectedIndex) + 1;
+
+
+            string name = secteur.GetItemText(secteur.SelectedItem);
+
+
+            DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Supprimer la liaison", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                sec.deleteLiaison(le, id, name);
+                this.Refresh();
+                lLai = sec.chargementLaiBD(id, name);
+                affiche2();
+
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                lLai = sec.chargementLaiBD(id, name);
+            }
+        }
+
+        private void inserer_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.ShowDialog();
         }
     }
 }
