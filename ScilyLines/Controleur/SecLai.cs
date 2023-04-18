@@ -9,18 +9,21 @@ using System.Xml.Linq;
 
 namespace ScilyLines.Controleur
 {
-    public class SecLai
+    internal class SecLai
     {
         SecteurDAO laiDAO = new SecteurDAO();
         List<Secteur> listeSecteur;
         LaisonDAO laDAO = new LaisonDAO();
         List<Laison> listeLaison;
+        PortDAO laiPort = new PortDAO();
+        List<Port> listePorte;
         Secteur s;
 
         public SecLai()
         {
             listeSecteur = new List<Secteur>();
             listeLaison = new List<Laison>();
+            listePorte = new List<Port>();
 
         }
         // get secteur list
@@ -29,18 +32,26 @@ namespace ScilyLines.Controleur
             listeSecteur = SecteurDAO.getSecteur();
             return listeSecteur;
         }
-        public List<Laison> chargementLaiBD(string id, string name)
+        //to get list port
+        public   List <Port> chargementPoBD()
+        {
+            listePorte = PortDAO.getPort();
+            return listePorte;
+        }
+       
+
+        public List<Laison> chargementLaiBD(int id, string name)
         {
             listeLaison = LaisonDAO.getLaison(id, name);
             return listeLaison;
         }
-        public void updateDuree(Laison le, string id, string name)
+        public void updateDuree(Laison le, int id, string name)
         {
 
             LaisonDAO.updateDuree(le, id, name);
 
         }
-        public void deleteLiaison(Laison le, string id, string name)
+        public void deleteLiaison(Laison le, int id, string name)
         {
 
             LaisonDAO.deleteLiaison(le, id, name);

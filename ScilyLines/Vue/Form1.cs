@@ -79,7 +79,7 @@ namespace ScilyLines
             string name = secteur.GetItemText(secteur.SelectedItem);
 
 
-            lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+            lLai = sec.chargementLaiBD(id, name);
             affiche2();
 
             delete.Visible = true;
@@ -135,8 +135,8 @@ namespace ScilyLines
                         string name = secteur.GetItemText(secteur.SelectedItem);
 
 
-                        sec.updateDuree(le, Convert.ToString(id), name);
-                        lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                        sec.updateDuree(le,id, name);
+                        lLai = sec.chargementLaiBD(id, name);
 
 
                         affiche2();
@@ -150,7 +150,7 @@ namespace ScilyLines
 
                         string name = secteur.GetItemText(secteur.SelectedItem);
 
-                        lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                        lLai = sec.chargementLaiBD(id, name);
                     }
                 }
 
@@ -199,16 +199,16 @@ namespace ScilyLines
             DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Supprimer la liaison", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                sec.deleteLiaison(le, Convert.ToString(id), name);
+                sec.deleteLiaison(le, id, name);
                 this.Refresh();
-                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                lLai = sec.chargementLaiBD(id, name);
                 affiche2();
 
 
             }
             else if (dialogResult == DialogResult.No)
             {
-                lLai = sec.chargementLaiBD(Convert.ToString(id), name);
+                lLai = sec.chargementLaiBD(id, name);
             }
         }
 

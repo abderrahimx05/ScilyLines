@@ -8,19 +8,19 @@ namespace ScilyLines.Modele
 {
     public class Laison
     {
-        private string id;
+        private int id;
         private string depart;
         private string arrivee;
         private string duree;
-        private string arriveeId;
+        private int arriveeId;
 
 
 
 
 
-        public Laison(string depart, string arrivee, string duree, string arriveeId)
+        public Laison(string depart, string arrivee, string duree , int arriveeId)
         {
-            this.id = id;
+           
             this.depart = depart;
             this.arrivee = arrivee;
             this.duree = duree;
@@ -39,10 +39,10 @@ namespace ScilyLines.Modele
         {
             get => "Depart: " + this.depart + " Vers : " + this.arrivee + " d'une duree de : " + this.duree + " min .";
         }
-        private string Id { get => id; }
+        private int Id { get => id; }
         public string Depart { get => depart; set => depart = value; }
         public string Arrivee { get => arrivee; set => arrivee = value; }
         public string Duree { get => duree; set => duree = value; }
-        public string ArriveeId { get => arriveeId; set => arriveeId = value; }
+        public int ArriveeId { get => arriveeId; set => arriveeId = value; }
     }
 }

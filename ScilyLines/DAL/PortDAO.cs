@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using ScilyLines.DAL;
 using ScilyLines.Modele;
 using System;
 using System.Collections.Generic;
@@ -7,11 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScilyLines
+namespace ScilyLines.DAL
 {
-    public class SecteurDAO
+    internal class PortDAO
     {
-
         private static string provider = "localhost";
 
         private static string dataBase = "scilylinees";
@@ -26,10 +24,10 @@ namespace ScilyLines
 
 
         private static MySqlCommand com;
-        public static List<Secteur> getSecteur()
+        public static List<Port> getPort()
         {
 
-            List<Secteur> lc = new List<Secteur>();
+            List<Port> dor = new List<Port>();
 
             try
             {
@@ -40,27 +38,27 @@ namespace ScilyLines
                 maConnexionSql.openConnection();
 
 
-                com = maConnexionSql.reqExec("Select * from secteur ");
+                com = maConnexionSql.reqExec("Select * from port ");
 
 
                 MySqlDataReader reader = com.ExecuteReader();
 
-                Secteur e;
+                Port e;
 
                 while (reader.Read())
                 {
 
                     int id = (int)reader.GetValue(0);
                     string nom = (string)reader.GetValue(1);
-                    
 
 
 
 
-                    e = new Secteur(id, nom );
+
+                    e = new Port(id, nom);
 
 
-                    lc.Add(e);
+                    dor.Add(e);
 
 
                 }
@@ -70,7 +68,7 @@ namespace ScilyLines
                 maConnexionSql.closeConnection();
 
 
-                return (lc);
+                return (dor);
 
 
 
@@ -84,6 +82,5 @@ namespace ScilyLines
             }
 
         }
-
     }
 }

@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\ScilyLines",
+    "\\ScilyLines\\Controleur",
+    "\\ScilyLines\\DAL",
+    "\\ScilyLines\\Modele",
     "\\ScilyLines\\Vue"
   ],
-  "SelectedNode": "\\ScilyLines.sln",
+  "SelectedNode": "\\ScilyLines\\DAL\\LaisonDAO.cs",
   "PreviewInSolutionExplorer": false
 }

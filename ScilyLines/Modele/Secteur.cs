@@ -11,13 +11,16 @@ namespace ScilyLines.Modele
     {
 
         private string name;
-        private string id;
+        private int id;
+        private string nameport;
+        private int idport;
 
-        public Secteur(string name, string id)
+        public Secteur(int id ,string name )
         {
 
             this.name = name;
             this.id = id;
+               
         }
 
         public Secteur()
@@ -29,8 +32,11 @@ namespace ScilyLines.Modele
         {
             get => this.name;
         }
-        public string Id { get => id; }
+       
+
+        public int Id { get => id; }
         public string Name { get => name; set => name = value; }
+        
 
 
     }
