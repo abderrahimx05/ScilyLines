@@ -24,8 +24,7 @@ namespace ScilyLines.Vue
         LaisonDAO l;
         List<Secteur> lSec = new List<Secteur>();
         List<Laison> lLai = new List<Laison>();
-        List<Port> lPort = new List<Port>();
-        List<Port> lPorte = new List<Port>();
+       
         Secteur s;
 
 
@@ -38,42 +37,8 @@ namespace ScilyLines.Vue
 
         }
         
-        public void affiche1()
-
-        {
-            try
-            {
-
-                portArrivee.DataSource = null;
-                portArrivee.DataSource = lPort;
-                portArrivee.DisplayMember = "afficherPorte";
-
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-        public void affiche2()
-
-        {
-            try
-            {
-
-                portArrivee.DataSource = null;
-                portArrivee.DataSource = lPorte;
-                portArrivee.DisplayMember = "afficherPorte";
-
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
+      
+      
         private void ajouter_Click(object sender, EventArgs e)
         {
             string id_depart = portDepart.Text;
@@ -134,14 +99,12 @@ namespace ScilyLines.Vue
 
         private void portDepart_Click(object sender, EventArgs e)
         {
-            lPort = sec.chargementPoBD();
-            affiche1();
+            
 
         }
         private void portArrivee_Click(object sender, EventArgs e)
         {
-            lPorte = sec.chargementPoBD();
-            affiche1();
+            
 
         }
     }
