@@ -15,8 +15,7 @@ namespace ScilyLines.Controleur
         List<Secteur> listeSecteur;
         LaisonDAO laDAO = new LaisonDAO();
         List<Laison> listeLaison;
-        PortDAO laiPort = new PortDAO();
-        List<Port> listePorte;
+       
         Secteur s;
 
         public SecLai()
@@ -33,11 +32,7 @@ namespace ScilyLines.Controleur
             return listeSecteur;
         }
         //to get list port
-        public   List <Port> chargementPoBD()
-        {
-            listePorte = PortDAO.getPort();
-            return listePorte;
-        }
+       
        
 
         public List<Laison> chargementLaiBD(int id, string name)
