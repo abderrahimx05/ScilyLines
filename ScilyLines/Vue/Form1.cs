@@ -74,11 +74,11 @@ namespace ScilyLines
         private void secteur_MouseClick(object sender, MouseEventArgs e)
         {
             int id = (secteur.SelectedIndex) + 1;
-
+            //pour aficher le nombre de liaison ici il faut double clique
+            
 
             string name = secteur.GetItemText(secteur.SelectedItem);
-
-
+        
             lLai = sec.chargementLaiBD(id, name);
             affiche2();
 
@@ -196,7 +196,7 @@ namespace ScilyLines
             string name = secteur.GetItemText(secteur.SelectedItem);
 
 
-            DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Supprimer la liaison", MessageBoxButtons.YesNo);
+           DialogResult dialogResult = MessageBox.Show("vous êtes sûr ?", "Supprimer la liaison", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 sec.deleteLiaison(le, id, name);
@@ -216,6 +216,23 @@ namespace ScilyLines
         {
             Form2 f = new Form2();
             f.ShowDialog();
+        }
+
+        private void laison_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void secteur_OnClick(object sender, EventArgs e)
+        {
+           
+        }
+        //pour aficher le nombre de liaison
+        private void secteur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int nomber = laison.Items.Count;
+            nombre.Text = Convert.ToString(nomber);
         }
     }
 }

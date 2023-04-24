@@ -33,9 +33,9 @@ namespace ScilyLines.Controleur
             return listeSecteur;
         }
         //to get list port
-        public   List <Port> chargementPoBD()
+        public   List <Port> chargementPoBD(int id)
         {
-            listePorte = PortDAO.getPort();
+            listePorte = PortDAO.getPort( id);
             return listePorte;
         }
        
@@ -44,6 +44,10 @@ namespace ScilyLines.Controleur
         {
             listeLaison = LaisonDAO.getLaison(id, name);
             return listeLaison;
+        }
+        public void chargementLai(int id)
+        {
+            PortDAO.getPort(id);
         }
         public void updateDuree(Laison le, int id, string name)
         {
@@ -57,6 +61,7 @@ namespace ScilyLines.Controleur
             LaisonDAO.deleteLiaison(le, id, name);
 
         }
+
 
 
 

@@ -24,7 +24,7 @@ namespace ScilyLines.DAL
 
 
         private static MySqlCommand com;
-        public static List<Port> getPort()
+        public static List<Port> getPort(int id)
         {
 
             List<Port> dor = new List<Port>();
@@ -38,7 +38,7 @@ namespace ScilyLines.DAL
                 maConnexionSql.openConnection();
 
 
-                com = maConnexionSql.reqExec("Select * from port ");
+                com = maConnexionSql.reqExec("Select * from port where ID !="+id);
 
 
                 MySqlDataReader reader = com.ExecuteReader();
@@ -48,14 +48,14 @@ namespace ScilyLines.DAL
                 while (reader.Read())
                 {
 
-                    int id = (int)reader.GetValue(0);
+                    int idd = (int)reader.GetValue(0);
                     string nom = (string)reader.GetValue(1);
 
 
 
 
 
-                    e = new Port(id, nom);
+                    e = new Port(idd, nom);
 
 
                     dor.Add(e);

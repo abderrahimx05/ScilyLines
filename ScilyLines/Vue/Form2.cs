@@ -44,9 +44,9 @@ namespace ScilyLines.Vue
             try
             {
 
-                portArrivee.DataSource = null;
-                portArrivee.DataSource = lPort;
-                portArrivee.DisplayMember = "afficherPorte";
+                portDepart.DataSource = null;
+                portDepart.DataSource = lSec;
+                portDepart.DisplayMember = "afficherSecteur";
 
             }
 
@@ -74,20 +74,38 @@ namespace ScilyLines.Vue
                 MessageBox.Show(ex.Message);
             }
         }
-        private void ajouter_Click(object sender, EventArgs e)
+        private void portDepart_Click(object sender, EventArgs e)
         {
-            string id_depart = portDepart.Text;
+           
+          
+            lSec = sec.chargementSecBD();
+            affiche1();
+
+        }
+        private void portArrivee_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32((portDepart.SelectedIndex) + 1);
+
+            lPorte = sec.chargementPoBD(id);
+            affiche2();
+
+        }
+        private void ajouter_Click(object sender, EventArgs e)
+            
+        {
+            int id_depart = (portDepart.SelectedIndex) + 1;
+            
 
 
-            string id_arrivee = portArrivee.Text;
+            int id_arrivee =(portArrivee.SelectedIndex) + 1;
 
 
 
             string dure = duree.Text;
 
+           
+           MessageBox.Show(Convert.ToString(id_depart), Convert.ToString(id_arrivee));
 
-            string id_regroupe = "aa";
-            int id = 1;
             if ( portDepart.Text.Length == 0 || portArrivee.Text.Length == 0|| duree.Text.Length == 0 )
             {
                 string message = "Vous n'avez pas entrer aucun valeur pour l'operation?";
@@ -102,22 +120,17 @@ namespace ScilyLines.Vue
 
                     this.Show();
 
-
-
-
                 }
-                else
-                {
-                    LaisonDAO.addLiaison(id, dure, id_depart, id_arrivee, id_regroupe);
-                    this.Close();
-                }
+                
             }
-            
-            
-            
-           
-
-           
+      else
+                {
+                    
+                    LaisonDAO.addLiaison( id_depart, id_arrivee,dure);
+                this.Close();
+                    
+                    
+                }
 
         }
 
@@ -126,24 +139,9 @@ namespace ScilyLines.Vue
             this.Close();
         }
 
+   
+
        
-
-        
-
-        
-
-        private void portDepart_Click(object sender, EventArgs e)
-        {
-            lPort = sec.chargementPoBD();
-            affiche1();
-
-        }
-        private void portArrivee_Click(object sender, EventArgs e)
-        {
-            lPorte = sec.chargementPoBD();
-            affiche1();
-
-        }
     }
 
 }

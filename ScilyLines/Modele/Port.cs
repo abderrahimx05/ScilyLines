@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScilyLines.Modele
 {
-    internal class Port
+    public class Port
     {
         private string porte;
         private int id;

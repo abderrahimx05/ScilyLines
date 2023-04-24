@@ -22,6 +22,7 @@ namespace ScilyLines.Modele
             this.id = id;
                
         }
+        
 
         public Secteur()
         {

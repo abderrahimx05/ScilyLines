@@ -43,6 +43,7 @@
             this.laison = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.nombre = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,6 +98,7 @@
             this.secteur.Size = new System.Drawing.Size(122, 130);
             this.secteur.TabIndex = 2;
             this.secteur.MouseClick += new System.Windows.Forms.MouseEventHandler(this.secteur_MouseClick);
+            this.secteur.SelectedIndexChanged += new System.EventHandler(this.secteur_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -184,6 +186,7 @@
             this.laison.Name = "laison";
             this.laison.Size = new System.Drawing.Size(449, 130);
             this.laison.TabIndex = 4;
+            this.laison.Click += new System.EventHandler(this.laison_Click);
             // 
             // label3
             // 
@@ -201,12 +204,21 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // nombre
+            // 
+            this.nombre.AutoSize = true;
+            this.nombre.Location = new System.Drawing.Point(248, 316);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(0, 21);
+            this.nombre.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(720, 456);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.laison);
             this.Controls.Add(this.panel2);
@@ -246,6 +258,7 @@
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label nombre;
     }
 }
 

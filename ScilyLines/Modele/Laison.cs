@@ -8,24 +8,26 @@ namespace ScilyLines.Modele
 {
     public class Laison
     {
+       
+
         private int id;
-        private string depart;
-        private string arrivee;
+        private Port depart;
+        private Port arrivee;
         private string duree;
-        private int arriveeId;
+       
 
 
 
 
-
-        public Laison(string depart, string arrivee, string duree , int arriveeId)
+         public Laison( Port depart, Port arrivee, string duree)
         {
            
             this.depart = depart;
             this.arrivee = arrivee;
             this.duree = duree;
-            this.ArriveeId = arriveeId;
+            
         }
+      
 
         public Laison()
         {

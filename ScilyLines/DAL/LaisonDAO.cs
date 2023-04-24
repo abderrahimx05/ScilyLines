@@ -97,6 +97,7 @@ namespace ScilyLines.DAL
             }
 
         }
+        
         public static void updateDuree(Laison le, int id, string name)
         {
 
@@ -108,9 +109,9 @@ namespace ScilyLines.DAL
 
 
                 maConnexionSql.openConnection();
+                
 
-
-                com = maConnexionSql.reqExec(" update liaison  set duree=" + le.Duree + " where ID_REGROUPER=" + id+" and ID_arrivee="+le.ArriveeId );
+                com = maConnexionSql.reqExec(" update liaison  set duree=" + le.Duree + " where ID_REGROUPER=" + id + " and ID_arrivee=" + le.ArriveeId);
 
 
                 int i = com.ExecuteNonQuery();
@@ -165,8 +166,12 @@ namespace ScilyLines.DAL
 
 
         }
-        public static void addLiaison(int id, string duree, string id_depart, string id_arrivee, string id_secteur)
+        
+        public static void addLiaison( int id_depart, int id_arrivee , string duree)
         {
+            //string req = "INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree ) VALUES(" + id_depart + "," + id_arrivee + "," + duree + ")";
+
+            // MessageBox.Show(req);
 
             try
             {
@@ -175,11 +180,9 @@ namespace ScilyLines.DAL
                 maConnexionSql = Connexion.getInstance(provider, dataBase, uid, mdp);
 
                 maConnexionSql.openConnection();
-                //string req = "INSERT INTO liaison(ID_DEPART, ID_ARRIVEE , duree , ID_REGROUPER) VALUES(" + id_depart + ", " + id_arrivee + ", " + duree + ", " + id_secteur + ")";
+                
 
-                //MessageBox.Show(req);
-
-                com = maConnexionSql.reqExec("INSERT INTO liaison(ID ,ID_DEPART, ID_ARRIVEE , duree ,ID_REGROUPER) VALUES(" + id + "," + id_depart + "," + id_arrivee + "," + duree + "," + id_secteur + ")");
+                com = maConnexionSql.reqExec("INSERT INTO liaison(ID_REGROUPER ,ID_DEPART, ID_ARRIVEE , duree ) VALUES("+ id_depart + ","  + id_depart + "," + id_arrivee + "," + duree +  ")");
 
 
                 int i = com.ExecuteNonQuery();

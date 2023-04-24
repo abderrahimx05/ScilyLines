@@ -94,7 +94,6 @@
     <Compile Include="DAL\PortDAO.cs" />
     <Compile Include="Modele\Laison.cs" />
     <Compile Include="Modele\Port.cs" />
-    <Compile Include="Modele\traversees.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modele\Secteur.cs" />
